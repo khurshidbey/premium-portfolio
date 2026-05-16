@@ -20,7 +20,6 @@ export default function AdminDashboard() {
   const [pdfFile, setPdfFile] = useState(null);
   const [gallery, setGallery] = useState([]); 
   
-  // YANGILANGAN: Default kategoriya Endi "Grafik dizayn"
   const [category, setCategory] = useState("Grafik dizayn"); 
   const [projects, setProjects] = useState([]);
 
@@ -144,7 +143,6 @@ export default function AdminDashboard() {
 
   const handleLogout = async () => { await account.deleteSession("current"); router.push("/"); };
 
-  // MAXFIYLIK TEKSHIRUVI EKRANI
   if (authLoading) {
     return (
       <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center text-white">
@@ -185,7 +183,6 @@ export default function AdminDashboard() {
                 <form onSubmit={handleProjectSubmit} className="flex flex-col gap-4">
                   <input type="text" placeholder="Loyiha nomi" required value={title} onChange={(e) => setTitle(e.target.value)} className="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-blue-500 text-white" />
                   
-                  {/* YANGILANGAN KATEGORIYALAR RO'YXATI */}
                   <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-blue-500 text-white appearance-none cursor-pointer">
                     <option value="Brend dizayni">Brend dizayni</option>
                     <option value="Qadoqlash">Qadoqlash</option>
